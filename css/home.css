@@ -5,8 +5,6 @@ body {
             #409ecd 100%);
     background-repeat: no-repeat;
     background-size: cover;
-
-
 }
 
 h1 {
@@ -60,7 +58,7 @@ main {
     font-size: 48px
 }
 
-.lista {
+.list {
     list-style-type: none;
     margin: 1em 0;
     display: grid;
@@ -69,7 +67,7 @@ main {
     gap: 1em;
 }
 
-.lista li img {
+.list li img {
     width: 300px;
     height: 444px;
 }
@@ -80,10 +78,8 @@ main {
 }
 
 @media screen and (max-width: 1600px) {
-    .lista {
+    .list {
         overflow: hidden;
         overflow-x: scroll;
     }
-
-
 }

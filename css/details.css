@@ -10,22 +10,21 @@ body {
     /* Define la altura como 100vh para ocupar toda la pantalla */
 }
 
-
 .ficha img {
     margin: 0 3em 2em 0;
 }
 
-.ficha-descripcion {
+.ficha-description {
     display: flex;
 }
 
-.ficha-descripcion div {
+.ficha-description div {
     display: flex;
     flex-direction: column;
     gap: 3em;
 }
 
-.episodios-lista {
+.episodes-list {
     height: 25vh;
     display: flex;
     flex-direction: column;
@@ -58,8 +57,8 @@ select {
 
 @media screen and (max-width: 900px) {
 
-    .ficha-descripcion,
-    .episodios-lista {
+    .ficha-description,
+    .episodes-list {
         display: block;
     }
 }

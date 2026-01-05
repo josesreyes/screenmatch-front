@@ -78,11 +78,13 @@ function generateSeries() {
   // Hace todas las solicitudes en paralelo
   Promise.all(urls.map((url) => getData(url)))
     .then((data) => {
+      //console.log("Resultados de las llamadas:", data);
       createMovieList(elements.top5, data[0]);
       createMovieList(elements.releases, data[1]);
       createMovieList(elements.series, data[2].slice(0, 5));
     })
     .catch((error) => {
       handleErrors("An error ocurred while loading the data.");
+      console.error(error);
     });
 }

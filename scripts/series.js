@@ -29,6 +29,11 @@ function loadSeasons() {
       allOptions.value = "todas";
       allOptions.textContent = "Todas las temporadas";
       seasonList.appendChild(allOptions);
+
+      const top5EpisodesOption = document.createElement("option");
+      top5EpisodesOption.value = "top5Episodes";
+      top5EpisodesOption.textContent = "Top 5 episodes";
+      seasonList.appendChild(top5EpisodesOption);
     })
     .catch((error) => {
       console.error("Error retrieving seasons:", error);

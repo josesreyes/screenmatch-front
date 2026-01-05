@@ -1,10 +1,10 @@
 // URL base da API
-const baseURL = 'http://localhost:8080';
+const baseURL = "http://localhost:8081";
 
-export default function getDatos(endpoint) {
-    return fetch(`${baseURL}${endpoint}`)
-        .then(response => response.json())
-        .catch(error => {
-            console.error('Error al ingresar al endpoint /series/top5:', error);
-        });
+export default function getData(endpoint) {
+  return fetch(`${baseURL}${endpoint}`)
+    .then((response) => response.json())
+    .catch((error) => {
+      console.error("Error accessing the endpoint /series/top5:", error);
+    });
 }

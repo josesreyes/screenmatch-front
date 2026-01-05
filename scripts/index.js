@@ -60,7 +60,7 @@ selectCategory.addEventListener("change", function () {
 
     category.classList.remove("hidden");
     // Haga una solicitud para el endpoint com la categoria seleccionada
-    getData(`/series/category/${selectedCategory}`)
+    getData(`/series/genre/${selectedCategory}`)
       .then((data) => {
         createMovieList(category, data);
       })

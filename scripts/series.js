@@ -85,7 +85,7 @@ function loadSeriesInfo() {
                     <h2>${data.title}</h2>
                     <div class="description-text">
                         <p><b>Média de evaluaciones:</b> ${data.rating}</p>
-                        <p>${data.sinopsys}</p>
+                        <p>${data.synopsis}</p>
                         <p><b>Actores:</b> ${data.actors}</p>
                     </div>
                 </div>

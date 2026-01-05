@@ -8,11 +8,9 @@ const fichaDescription = document.getElementById("ficha-description");
 
 // Funcion para cargar temporadas
 function loadSeasons() {
-  getData(`/series/${seriesId}/season/all`)
+  getData(`/series/${seriesId}/seasons/all`)
     .then((data) => {
-      const uniqueSeasons = [
-        ...new Set(data.map((temporada) => temporada.temporada)),
-      ];
+      const uniqueSeasons = [...new Set(data.map((season) => season.season))];
       seasonList.innerHTML = ""; // Limpia las opciones existentes
 
       const optionDefault = document.createElement("option");
@@ -39,7 +37,12 @@ function loadSeasons() {
 
 // Funcion para cargar episodios de una temporada
 function loadEpisodes() {
-  getData(`/series/${seriesId}/seasons/${seasonList.value}`)
+  if (!seasonList.value) {
+    return;
+  }
+
+  const seasonValue = seasonList.value === "todas" ? "all" : seasonList.value;
+  getData(`/series/${seriesId}/seasons/${seasonValue}`)
     .then((data) => {
       const uniqueSeasons = [...new Set(data.map((season) => season.season))];
       fichaSeries.innerHTML = "";
@@ -55,7 +58,7 @@ function loadEpisodes() {
           .map(
             (series) => `
                     <li>
-                        ${series.episodeNumber} - ${series.title}
+                        ${series.episode} - ${series.title}
                     </li>
                 `
           )
